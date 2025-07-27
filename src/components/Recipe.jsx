@@ -14,7 +14,12 @@ export default function Recipe(props) {
                     <h2>Ready for a recipe?</h2>
                     <p>Get a recipe for your list of inngredients!</p>
                 </div>
-                <button onClick={props.getRecipe}>Get Recipe</button>
+                <button 
+                    className={props.loading ? 'loading' : ''} 
+                    onClick={props.getRecipe}
+                    disabled={props.loading}>
+                    {props.loading ? <span className="loader"></span>: 'Get Recipe'}
+                </button>
             </section>}
         </>
     )
